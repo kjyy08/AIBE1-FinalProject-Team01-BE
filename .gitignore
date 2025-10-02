@@ -49,3 +49,6 @@ application*.properties
 
 ### jOOQ ###
 generated/
+
+### Claude Code ###
+.claude/settings.local.json
