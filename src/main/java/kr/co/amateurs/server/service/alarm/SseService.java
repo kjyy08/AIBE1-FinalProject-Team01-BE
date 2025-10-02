@@ -64,13 +64,13 @@ public class SseService {
         connections.put(currentUserId, emitter);
 
         // 연결 수명주기 이벤트 핸들러 등록
-        emitter.onCompletion(() -> connections.remove(currentUserId));
-        emitter.onTimeout(() -> connections.remove(currentUserId));
+        emitter.onCompletion(() -> connections.remove(currentUserId, emitter));
+        emitter.onTimeout(() -> connections.remove(currentUserId, emitter));
         emitter.onError(throwable -> {
-            connections.remove(currentUserId);
+            connections.remove(currentUserId, emitter);
             // 예상치 못한 오류만 로깅
             if (!isExpectedConnectionError(throwable)) {
-                log.warn("SSE 연결 예상치 못한 오류: userId={}, error={}", 
+                log.warn("SSE 연결 예상치 못한 오류: userId={}, error={}",
                         currentUserId, throwable.getMessage());
             }
         });
