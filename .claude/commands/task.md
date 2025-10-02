@@ -18,7 +18,6 @@ Follow this development workflow for all feature implementations. All work and r
     - Use descriptive branch names that reflect the feature being implemented
 
 3. **Development Process**
-    - Start development by updating GitHub project status to "In Progress"
     - Proceed with development using @agents that are appropriate for the given situation
     - Use Context7 tools. If Context7 is not available, provide guidance to the developer before starting development
 
@@ -33,7 +32,7 @@ Follow this development workflow for all feature implementations. All work and r
     - Address any feedback or concerns raised during review
 
 5. **Commit Standards** (After Developer Approval)
-    - Use github-project-manager agent
+    - Use github-manager agent
     - Only proceed after receiving developer approval from step 4
 
 6. **Code Push**
@@ -43,6 +42,5 @@ Follow this development workflow for all feature implementations. All work and r
 7. **Pull Request Creation**
     - Create PR with descriptive title matching commit convention
     - Use team PR template(`.github/pull_request_template.md`): Follow the standardized PR template for consistent documentation
-    - Update GitHub project status to "In Review"
 
 $2
