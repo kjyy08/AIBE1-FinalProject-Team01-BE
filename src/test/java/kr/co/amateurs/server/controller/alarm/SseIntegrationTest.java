@@ -97,7 +97,7 @@ class SseIntegrationTest extends AbstractControllerTest {
         assertThat(getConnections()).hasSize(2);
     }
 
-    @Test
+    @RepeatedTest(10)
     void 같은_사용자가_중복_연결_시_기존_연결이_교체된다() {
         // given & when
         given().header("Authorization", "Bearer " + accessToken)
