@@ -118,14 +118,12 @@ jacocoTestReport {
 	afterEvaluate {
 		classDirectories.setFrom(files(classDirectories.files.collect {
 			fileTree(dir: it, exclude: [
-					'**/generated/**',
+					'org/jooq/**',
 
-					'**/config/**',
-					'**/domain/**',
-					'**/exception/**',
-					'**/handler/**',
-					'**/repository/**',
-					'**/utils/**',
+					'**/common/**',
+					'**/domain/*/config/**',
+					'**/domain/*/model/**',
+					'**/domain/*/repository/**',
 
 					'**/*Application.*'
 			])
@@ -161,7 +159,12 @@ jacocoTestCoverageVerification {
 //			excludes = [
 //					'*.Application',
 //					'*.Config*',
-//					'*.Configuration*'
+//					'*.Configuration*',
+//					'org.jooq.generated.*',
+//					'kr.co.amateurs.server.common.*',
+//					'*.model.dto.*',
+//					'*.model.entity.*',
+//					'*.repository.*'
 //			]
 //		}
 //	}
