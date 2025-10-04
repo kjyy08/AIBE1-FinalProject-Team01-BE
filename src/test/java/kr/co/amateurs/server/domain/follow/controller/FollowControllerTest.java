@@ -1,6 +1,6 @@
-package kr.co.amateurs.server.controller.follow;
+package kr.co.amateurs.server.domain.follow.controller;
 
-import kr.co.amateurs.server.controller.common.AbstractControllerTest;
+import kr.co.amateurs.server.common.controller.AbstractControllerTest;
 
 public class FollowControllerTest extends AbstractControllerTest {
 

@@ -1,4 +1,4 @@
-package kr.co.amateurs.server.service.directmessage;
+package kr.co.amateurs.server.domain.directmessage.service;
 
 import kr.co.amateurs.server.common.config.EmbeddedRedisConfig;
 import kr.co.amateurs.server.common.model.dto.ErrorCode;
@@ -8,7 +8,6 @@ import kr.co.amateurs.server.domain.directmessage.model.dto.event.AnonymizeEvent
 import kr.co.amateurs.server.domain.directmessage.model.entity.DirectMessage;
 import kr.co.amateurs.server.domain.directmessage.model.entity.DirectMessageRoom;
 import kr.co.amateurs.server.domain.directmessage.model.entity.enums.MessageType;
-import kr.co.amateurs.server.domain.directmessage.service.DirectMessageService;
 import kr.co.amateurs.server.domain.user.model.entity.User;
 import kr.co.amateurs.server.common.exception.CustomException;
 import kr.co.amateurs.server.fixture.common.TestConstants;

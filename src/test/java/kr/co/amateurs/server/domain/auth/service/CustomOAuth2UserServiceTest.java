@@ -1,12 +1,12 @@
 package kr.co.amateurs.server.domain.auth.service;
 
 import kr.co.amateurs.server.common.config.EmbeddedRedisConfig;
-import kr.co.amateurs.server.common.config.jwt.CustomUserDetails;
+import kr.co.amateurs.server.common.jwt.CustomUserDetails;
 import kr.co.amateurs.server.domain.user.model.entity.User;
 import kr.co.amateurs.server.domain.user.model.entity.enums.ProviderType;
 import kr.co.amateurs.server.domain.user.model.entity.enums.Role;
-import kr.co.amateurs.server.fixture.auth.OAuth2TestFixture;  // ✨ Fixture import
 import kr.co.amateurs.server.domain.user.repository.UserRepository;
+import kr.co.amateurs.server.fixture.auth.OAuth2TestFixture;
 import okhttp3.mockwebserver.MockWebServer;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;

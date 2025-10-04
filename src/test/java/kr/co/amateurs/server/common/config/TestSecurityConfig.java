@@ -1,7 +1,7 @@
 package kr.co.amateurs.server.common.config;
 
-import kr.co.amateurs.server.common.config.jwt.CustomUserDetailsService;
-import kr.co.amateurs.server.common.config.jwt.JwtProvider;
+import kr.co.amateurs.server.common.jwt.CustomUserDetailsService;
+import kr.co.amateurs.server.common.jwt.JwtProvider;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Primary;

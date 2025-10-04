@@ -2,9 +2,8 @@ package kr.co.amateurs.server.fixture.project;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import kr.co.amateurs.server.domain.entity.post.Post;
-import kr.co.amateurs.server.domain.entity.post.Project;
-import kr.co.amateurs.server.domain.entity.post.enums.DevCourseTrack;
+import kr.co.amateurs.server.domain.post.model.entity.Post;
+import kr.co.amateurs.server.domain.post.model.entity.Project;
 
 import java.time.LocalDateTime;
 import java.util.List;

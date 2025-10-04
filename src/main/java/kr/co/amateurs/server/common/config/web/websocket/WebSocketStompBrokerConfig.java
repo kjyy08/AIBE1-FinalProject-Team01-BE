@@ -1,4 +1,4 @@
-package kr.co.amateurs.server.common.config;
+package kr.co.amateurs.server.common.config.web.websocket;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

@@ -1,11 +1,11 @@
-package kr.co.amateurs.server.common.config.jwt;
+package kr.co.amateurs.server.common.jwt;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import kr.co.amateurs.server.common.config.auth.CookieUtils;
+import kr.co.amateurs.server.common.config.web.auth.CookieUtils;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

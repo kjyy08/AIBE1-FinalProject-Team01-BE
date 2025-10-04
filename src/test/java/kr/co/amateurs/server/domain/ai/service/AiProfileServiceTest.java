@@ -1,18 +1,16 @@
-package kr.co.amateurs.server.service.ai;
+package kr.co.amateurs.server.domain.ai.service;
 
+import kr.co.amateurs.server.common.exception.CustomException;
 import kr.co.amateurs.server.domain.ai.model.dto.AiProfileRequest;
 import kr.co.amateurs.server.domain.ai.model.dto.AiProfileResponse;
 import kr.co.amateurs.server.domain.ai.model.entity.AiProfile;
-import kr.co.amateurs.server.domain.ai.service.AiLlmService;
-import kr.co.amateurs.server.domain.ai.service.AiProfileService;
-import kr.co.amateurs.server.domain.user.model.entity.User;
-import kr.co.amateurs.server.common.exception.CustomException;
-import kr.co.amateurs.server.fixture.ai.AiTestFixture;
 import kr.co.amateurs.server.domain.ai.repository.AiProfileRepository;
 import kr.co.amateurs.server.domain.bookmark.service.BookmarkService;
 import kr.co.amateurs.server.domain.like.service.LikeService;
 import kr.co.amateurs.server.domain.post.service.PostService;
+import kr.co.amateurs.server.domain.user.model.entity.User;
 import kr.co.amateurs.server.domain.user.service.UserService;
+import kr.co.amateurs.server.fixture.ai.AiTestFixture;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -25,7 +23,8 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.Optional;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.BDDMockito.given;
 

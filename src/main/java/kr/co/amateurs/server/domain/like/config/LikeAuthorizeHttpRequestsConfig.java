@@ -1,5 +1,5 @@
 package kr.co.amateurs.server.domain.like.config;
-import kr.co.amateurs.server.common.config.http.CustomAuthorizeHttpRequestsConfigurer;
+import kr.co.amateurs.server.common.config.web.http.CustomAuthorizeHttpRequestsConfigurer;
 
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;

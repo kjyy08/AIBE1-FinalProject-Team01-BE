@@ -1,4 +1,4 @@
-package kr.co.amateurs.server.common.config;
+package kr.co.amateurs.server.common.config.storage;
 
 
 import org.springframework.beans.factory.annotation.Value;

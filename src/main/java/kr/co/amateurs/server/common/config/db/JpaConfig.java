@@ -1,4 +1,4 @@
-package kr.co.amateurs.server.common.config;
+package kr.co.amateurs.server.common.config.db;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;

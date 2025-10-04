@@ -1,4 +1,4 @@
-package kr.co.amateurs.server.common.config;
+package kr.co.amateurs.server.common.config.infra;
 
 import io.opentelemetry.context.Context;
 import org.springframework.context.annotation.Bean;

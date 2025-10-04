@@ -1,34 +1,33 @@
-package kr.co.amateurs.server.service.ai;
+package kr.co.amateurs.server.domain.ai.service;
 
+import dev.langchain4j.data.segment.TextSegment;
+import dev.langchain4j.store.embedding.EmbeddingMatch;
 import kr.co.amateurs.server.domain.ai.model.dto.PostRecommendationResponse;
 import kr.co.amateurs.server.domain.ai.model.entity.AiProfile;
-import kr.co.amateurs.server.domain.ai.service.PostEmbeddingService;
-import kr.co.amateurs.server.domain.ai.service.PostRecommendService;
-import kr.co.amateurs.server.domain.post.model.entity.Post;
-import kr.co.amateurs.server.domain.post.model.entity.enums.BoardType;
-import kr.co.amateurs.server.domain.user.model.entity.User;
 import kr.co.amateurs.server.domain.ai.repository.AiProfileRepository;
 import kr.co.amateurs.server.domain.ai.repository.AiRecommendPostRepository;
+import kr.co.amateurs.server.domain.post.model.entity.Post;
+import kr.co.amateurs.server.domain.post.model.entity.enums.BoardType;
 import kr.co.amateurs.server.domain.post.repository.PostRepository;
+import kr.co.amateurs.server.domain.post.service.PostService;
+import kr.co.amateurs.server.domain.user.model.entity.User;
 import kr.co.amateurs.server.domain.user.service.UserService;
 import kr.co.amateurs.server.fixture.ai.AiTestFixture;
-import kr.co.amateurs.server.domain.post.service.PostService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
-import dev.langchain4j.store.embedding.EmbeddingMatch;
-import dev.langchain4j.data.segment.TextSegment;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatCode;
 import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.BDDMockito.given;
 

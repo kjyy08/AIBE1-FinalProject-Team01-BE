@@ -1,6 +1,6 @@
-package kr.co.amateurs.server.common.config;
+package kr.co.amateurs.server.common.utils;
 
-import kr.co.amateurs.server.common.config.jwt.CustomUserDetails;
+import kr.co.amateurs.server.common.jwt.CustomUserDetails;
 import kr.co.amateurs.server.domain.user.model.entity.User;
 import kr.co.amateurs.server.domain.user.repository.UserRepository;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

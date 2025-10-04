@@ -1,4 +1,4 @@
-package kr.co.amateurs.server.common.config.jwt;
+package kr.co.amateurs.server.common.jwt;
 
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;

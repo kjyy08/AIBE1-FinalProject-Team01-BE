@@ -1,4 +1,4 @@
-package kr.co.amateurs.server.common.config.jwt;
+package kr.co.amateurs.server.common.jwt;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.ServletException;

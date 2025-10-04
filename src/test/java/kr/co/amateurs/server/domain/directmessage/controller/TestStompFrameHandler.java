@@ -1,4 +1,4 @@
-package kr.co.amateurs.server.controller.directmessage;
+package kr.co.amateurs.server.domain.directmessage.controller;
 
 import org.springframework.messaging.simp.stomp.StompFrameHandler;
 import org.springframework.messaging.simp.stomp.StompHeaders;

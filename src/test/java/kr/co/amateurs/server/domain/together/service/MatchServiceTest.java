@@ -1,27 +1,26 @@
-package kr.co.amateurs.server.service.together;
+package kr.co.amateurs.server.domain.together.service;
 
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import kr.co.amateurs.server.common.exception.CustomException;
 import kr.co.amateurs.server.common.model.dto.PageResponseDTO;
 import kr.co.amateurs.server.common.model.dto.PostPaginationParam;
-import kr.co.amateurs.server.domain.together.model.dto.MatchPostRequestDTO;
-import kr.co.amateurs.server.domain.together.model.dto.MatchPostResponseDTO;
+import kr.co.amateurs.server.domain.ai.service.PostEmbeddingService;
+import kr.co.amateurs.server.domain.comment.repository.CommentRepository;
+import kr.co.amateurs.server.domain.like.service.LikeService;
 import kr.co.amateurs.server.domain.post.model.entity.MatchingPost;
 import kr.co.amateurs.server.domain.post.model.entity.Post;
 import kr.co.amateurs.server.domain.post.model.entity.PostStatistics;
 import kr.co.amateurs.server.domain.post.model.entity.enums.MatchingStatus;
 import kr.co.amateurs.server.domain.post.model.entity.enums.MatchingType;
-import kr.co.amateurs.server.domain.together.service.MatchService;
-import kr.co.amateurs.server.domain.user.model.entity.User;
-import kr.co.amateurs.server.common.exception.CustomException;
-import kr.co.amateurs.server.domain.comment.repository.CommentRepository;
 import kr.co.amateurs.server.domain.post.repository.PostRepository;
 import kr.co.amateurs.server.domain.post.repository.PostStatisticsRepository;
+import kr.co.amateurs.server.domain.together.model.dto.MatchPostRequestDTO;
+import kr.co.amateurs.server.domain.together.model.dto.MatchPostResponseDTO;
 import kr.co.amateurs.server.domain.together.repository.MatchRepository;
+import kr.co.amateurs.server.domain.user.model.entity.User;
 import kr.co.amateurs.server.domain.user.repository.UserRepository;
 import kr.co.amateurs.server.domain.user.service.UserService;
-import kr.co.amateurs.server.domain.ai.service.PostEmbeddingService;
-import kr.co.amateurs.server.domain.like.service.LikeService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -34,12 +33,12 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.support.TransactionTemplate;
 
-
 import static kr.co.amateurs.server.domain.post.model.entity.Post.convertTagToList;
 import static kr.co.amateurs.server.fixture.together.CommonTogetherFixture.createAdmin;
 import static kr.co.amateurs.server.fixture.together.CommonTogetherFixture.createStudent;
 import static kr.co.amateurs.server.fixture.together.MatchTestFixture.*;
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.BDDMockito.given;
 
 @SpringBootTest

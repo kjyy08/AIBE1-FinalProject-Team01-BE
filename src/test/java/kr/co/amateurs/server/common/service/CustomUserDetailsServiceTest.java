@@ -1,5 +1,7 @@
-package kr.co.amateurs.server.common.config.jwt;
+package kr.co.amateurs.server.common.service;
 
+import kr.co.amateurs.server.common.jwt.CustomUserDetails;
+import kr.co.amateurs.server.common.jwt.CustomUserDetailsService;
 import kr.co.amateurs.server.common.model.dto.ErrorCode;
 import kr.co.amateurs.server.domain.user.model.entity.User;
 import kr.co.amateurs.server.domain.user.model.entity.enums.ProviderType;

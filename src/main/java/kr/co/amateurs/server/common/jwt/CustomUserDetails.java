@@ -1,4 +1,4 @@
-package kr.co.amateurs.server.common.config.jwt;
+package kr.co.amateurs.server.common.jwt;
 
 import kr.co.amateurs.server.domain.user.model.entity.User;
 import lombok.Getter;

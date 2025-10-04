@@ -1,4 +1,4 @@
-package kr.co.amateurs.server.common.config.jwt;
+package kr.co.amateurs.server.common.jwt;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.http.HttpServletRequest;

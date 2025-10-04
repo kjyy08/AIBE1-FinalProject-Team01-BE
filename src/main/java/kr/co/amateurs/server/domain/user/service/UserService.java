@@ -1,6 +1,6 @@
 package kr.co.amateurs.server.domain.user.service;
 
-import kr.co.amateurs.server.common.config.jwt.CustomUserDetails;
+import kr.co.amateurs.server.common.jwt.CustomUserDetails;
 import kr.co.amateurs.server.common.model.dto.ErrorCode;
 import kr.co.amateurs.server.domain.directmessage.model.dto.event.AnonymizeEvent;
 import kr.co.amateurs.server.domain.user.model.dto.*;

@@ -1,5 +1,4 @@
-package kr.co.amateurs.server.service.follow;
-
+package kr.co.amateurs.server.domain.follow.service;
 
 import jakarta.transaction.Transactional;
 import org.springframework.boot.test.context.SpringBootTest;

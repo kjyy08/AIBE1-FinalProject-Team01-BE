@@ -2,7 +2,7 @@ package kr.co.amateurs.server.domain.ai.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import kr.co.amateurs.server.common.config.jwt.CustomUserDetails;
+import kr.co.amateurs.server.common.jwt.CustomUserDetails;
 import kr.co.amateurs.server.domain.ai.model.dto.AiProfileResponse;
 import kr.co.amateurs.server.domain.ai.model.dto.PostRecommendationResponse;
 import kr.co.amateurs.server.domain.ai.service.AiProfileService;

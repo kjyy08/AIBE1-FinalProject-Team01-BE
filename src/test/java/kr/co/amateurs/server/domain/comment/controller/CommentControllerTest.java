@@ -2,7 +2,7 @@ package kr.co.amateurs.server.domain.comment.controller;
 
 import io.restassured.http.ContentType;
 import kr.co.amateurs.server.common.annotation.alarmtrigger.AlarmAspect;
-import kr.co.amateurs.server.common.config.jwt.JwtProvider;
+import kr.co.amateurs.server.common.jwt.JwtProvider;
 import kr.co.amateurs.server.common.controller.AbstractControllerTest;
 import kr.co.amateurs.server.domain.comment.model.dto.CommentRequestDTO;
 import kr.co.amateurs.server.domain.comment.model.entity.Comment;

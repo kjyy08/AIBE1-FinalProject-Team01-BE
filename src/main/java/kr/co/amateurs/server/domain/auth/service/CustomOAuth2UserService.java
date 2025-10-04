@@ -1,6 +1,6 @@
 package kr.co.amateurs.server.domain.auth.service;
 
-import kr.co.amateurs.server.common.config.jwt.CustomUserDetails;
+import kr.co.amateurs.server.common.jwt.CustomUserDetails;
 import kr.co.amateurs.server.common.model.dto.ErrorCode;
 import kr.co.amateurs.server.domain.auth.model.dto.OAuthUserInfo;
 import kr.co.amateurs.server.domain.file.model.dto.FileResponseDTO;

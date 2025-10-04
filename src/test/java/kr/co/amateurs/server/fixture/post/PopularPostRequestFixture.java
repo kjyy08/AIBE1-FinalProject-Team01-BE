@@ -1,8 +1,8 @@
 package kr.co.amateurs.server.fixture.post;
 
-import kr.co.amateurs.server.domain.dto.post.PopularPostRequest;
-import kr.co.amateurs.server.domain.entity.post.enums.BoardType;
-import kr.co.amateurs.server.domain.entity.post.enums.DevCourseTrack;
+import kr.co.amateurs.server.domain.post.model.dto.PopularPostRequest;
+import kr.co.amateurs.server.domain.post.model.entity.enums.BoardType;
+import kr.co.amateurs.server.domain.post.model.entity.enums.DevCourseTrack;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;

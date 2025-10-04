@@ -1,15 +1,15 @@
 package kr.co.amateurs.server.domain.ai.controller;
 
-import kr.co.amateurs.server.common.controller.AbstractControllerTest;
 import io.restassured.RestAssured;
+import kr.co.amateurs.server.common.controller.AbstractControllerTest;
 import kr.co.amateurs.server.domain.ai.model.dto.PostRecommendationResponse;
+import kr.co.amateurs.server.domain.ai.service.PostRecommendService;
 import kr.co.amateurs.server.domain.post.model.dto.PopularPostResponse;
 import kr.co.amateurs.server.domain.post.model.entity.enums.BoardType;
-import kr.co.amateurs.server.domain.user.model.entity.User;
-import kr.co.amateurs.server.fixture.common.UserTestFixture;
-import kr.co.amateurs.server.domain.user.repository.UserRepository;
-import kr.co.amateurs.server.domain.ai.service.PostRecommendService;
 import kr.co.amateurs.server.domain.post.service.PopularPostService;
+import kr.co.amateurs.server.domain.user.model.entity.User;
+import kr.co.amateurs.server.domain.user.repository.UserRepository;
+import kr.co.amateurs.server.fixture.common.UserTestFixture;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -22,9 +22,6 @@ import java.util.List;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.when;
-import static org.hamcrest.Matchers.anyOf;
-import static org.hamcrest.Matchers.is;
-import static org.hamcrest.MatcherAssert.assertThat;
 
 class AiControllerTest extends AbstractControllerTest {
 

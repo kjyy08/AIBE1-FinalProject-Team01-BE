@@ -1,4 +1,4 @@
-package kr.co.amateurs.server.common.config.auth;
+package kr.co.amateurs.server.common.config.web.auth;
 
 import jakarta.servlet.http.HttpServletResponse;
 import kr.co.amateurs.server.common.model.dto.ErrorCode;

@@ -1,4 +1,4 @@
-package kr.co.amateurs.server.common.config.http;
+package kr.co.amateurs.server.common.config.web.http;
 
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.AuthorizeHttpRequestsConfigurer;

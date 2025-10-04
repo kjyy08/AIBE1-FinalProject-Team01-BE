@@ -1,7 +1,7 @@
 package kr.co.amateurs.server.domain.report.controller;
 
 import io.restassured.http.ContentType;
-import kr.co.amateurs.server.common.config.jwt.JwtProvider;
+import kr.co.amateurs.server.common.jwt.JwtProvider;
 import kr.co.amateurs.server.common.controller.AbstractControllerTest;
 import kr.co.amateurs.server.domain.report.model.dto.ReportRequestDTO;
 import kr.co.amateurs.server.domain.post.model.entity.Post;

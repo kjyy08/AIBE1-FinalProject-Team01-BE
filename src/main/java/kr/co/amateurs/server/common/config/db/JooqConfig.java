@@ -1,4 +1,4 @@
-package kr.co.amateurs.server.common.config.jooq;
+package kr.co.amateurs.server.common.config.db;
 
 import org.jooq.conf.ExecuteWithoutWhere;
 import org.jooq.conf.RenderQuotedNames;

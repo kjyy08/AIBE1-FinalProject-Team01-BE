@@ -1,8 +1,9 @@
 package kr.co.amateurs.server.fixture.alarm;
 
-import kr.co.amateurs.server.domain.entity.alarm.Alarm;
-import kr.co.amateurs.server.domain.entity.alarm.metadata.DirectMessageMetaData;
-import kr.co.amateurs.server.service.alarm.SseService;
+import kr.co.amateurs.server.domain.alarm.model.entity.Alarm;
+import kr.co.amateurs.server.domain.alarm.model.entity.enums.AlarmType;
+import kr.co.amateurs.server.domain.alarm.model.entity.metadata.DirectMessageMetaData;
+import kr.co.amateurs.server.domain.alarm.service.SseService;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 
@@ -29,7 +30,7 @@ public class SseTestFixture {
         return AlarmTestFixture.defaultAlarm()
                 .id("test_dm_" + userId + "_" + System.currentTimeMillis())
                 .userId(userId)
-                .type(kr.co.amateurs.server.domain.entity.alarm.enums.AlarmType.DIRECT_MESSAGE)
+                .type(AlarmType.DIRECT_MESSAGE)
                 .title("새로운 메시지가 도착했습니다.")
                 .content("새로운 다이렉트 메시지가 도착했습니다.")
                 .metaData(new DirectMessageMetaData("test-room-id","test-message-id"))

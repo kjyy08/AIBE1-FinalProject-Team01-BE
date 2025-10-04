@@ -1,8 +1,8 @@
 package kr.co.amateurs.server.fixture.project;
 
-import kr.co.amateurs.server.domain.entity.bookmark.Bookmark;
-import kr.co.amateurs.server.domain.entity.post.Post;
-import kr.co.amateurs.server.domain.entity.user.User;
+import kr.co.amateurs.server.domain.bookmark.model.entity.Bookmark;
+import kr.co.amateurs.server.domain.post.model.entity.Post;
+import kr.co.amateurs.server.domain.user.model.entity.User;
 
 public class BookmarkFixture {
     public static Bookmark createBookmark(User user, Post post) {

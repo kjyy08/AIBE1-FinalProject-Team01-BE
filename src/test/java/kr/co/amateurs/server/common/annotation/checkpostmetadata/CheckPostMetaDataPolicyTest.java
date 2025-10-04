@@ -1,6 +1,5 @@
-package kr.co.amateurs.server.common.config.checkpostmetadata;
+package kr.co.amateurs.server.common.annotation.checkpostmetadata;
 
-import kr.co.amateurs.server.common.annotation.checkpostmetadata.CheckPostMetaDataPolicy;
 import kr.co.amateurs.server.domain.post.model.entity.enums.BoardCategory;
 import kr.co.amateurs.server.domain.post.model.entity.enums.BoardType;
 import kr.co.amateurs.server.domain.post.model.entity.enums.OperationType;

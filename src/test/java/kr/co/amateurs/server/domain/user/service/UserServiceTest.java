@@ -1,7 +1,7 @@
 package kr.co.amateurs.server.domain.user.service;
 
 import kr.co.amateurs.server.common.config.EmbeddedRedisConfig;
-import kr.co.amateurs.server.common.config.TestAuthHelper;
+import kr.co.amateurs.server.common.utils.TestAuthHelper;
 import kr.co.amateurs.server.domain.user.model.dto.*;
 import kr.co.amateurs.server.domain.user.model.entity.UserTopic;
 import kr.co.amateurs.server.domain.user.model.entity.User;

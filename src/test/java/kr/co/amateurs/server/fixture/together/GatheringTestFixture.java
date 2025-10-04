@@ -1,14 +1,14 @@
 package kr.co.amateurs.server.fixture.together;
 
-import kr.co.amateurs.server.domain.dto.together.GatheringPostRequestDTO;
-import kr.co.amateurs.server.domain.entity.post.GatheringPost;
-import kr.co.amateurs.server.domain.entity.post.Post;
-import kr.co.amateurs.server.domain.entity.post.enums.BoardType;
-import kr.co.amateurs.server.domain.entity.post.enums.GatheringStatus;
-import kr.co.amateurs.server.domain.entity.post.enums.GatheringType;
-import kr.co.amateurs.server.domain.entity.user.User;
+import kr.co.amateurs.server.domain.together.model.dto.GatheringPostRequestDTO;
+import kr.co.amateurs.server.domain.post.model.entity.GatheringPost;
+import kr.co.amateurs.server.domain.post.model.entity.Post;
+import kr.co.amateurs.server.domain.post.model.entity.enums.BoardType;
+import kr.co.amateurs.server.domain.post.model.entity.enums.GatheringStatus;
+import kr.co.amateurs.server.domain.post.model.entity.enums.GatheringType;
+import kr.co.amateurs.server.domain.user.model.entity.User;
 
-import static kr.co.amateurs.server.domain.entity.post.Post.convertTagToList;
+import static kr.co.amateurs.server.domain.post.model.entity.Post.convertTagToList;
 
 
 public class GatheringTestFixture {

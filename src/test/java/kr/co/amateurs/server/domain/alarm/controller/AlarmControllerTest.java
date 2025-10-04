@@ -2,7 +2,7 @@ package kr.co.amateurs.server.domain.alarm.controller;
 
 import io.restassured.http.ContentType;
 import jakarta.annotation.PostConstruct;
-import kr.co.amateurs.server.common.config.jwt.CustomUserDetailsService;
+import kr.co.amateurs.server.common.jwt.CustomUserDetailsService;
 import kr.co.amateurs.server.common.controller.AbstractControllerTest;
 import kr.co.amateurs.server.domain.directmessage.model.dto.DirectMessageRequest;
 import kr.co.amateurs.server.domain.alarm.model.entity.Alarm;

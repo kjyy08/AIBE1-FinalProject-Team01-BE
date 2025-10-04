@@ -1,11 +1,10 @@
-package kr.co.amateurs.server.service.alarm;
+package kr.co.amateurs.server.domain.alarm.service;
 
 import kr.co.amateurs.server.domain.alarm.model.entity.Alarm;
-import kr.co.amateurs.server.domain.alarm.service.SseService;
 import kr.co.amateurs.server.domain.user.model.entity.User;
+import kr.co.amateurs.server.domain.user.service.UserService;
 import kr.co.amateurs.server.fixture.alarm.AlarmTestFixture;
 import kr.co.amateurs.server.fixture.common.UserTestFixture;
-import kr.co.amateurs.server.domain.user.service.UserService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -21,7 +20,6 @@ import java.io.IOException;
 import java.util.concurrent.ConcurrentHashMap;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.mockito.Mockito.*;
 

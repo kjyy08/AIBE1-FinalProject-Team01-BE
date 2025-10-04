@@ -1,8 +1,8 @@
 package kr.co.amateurs.server.fixture.auth;
 
-import kr.co.amateurs.server.domain.entity.user.User;
-import kr.co.amateurs.server.domain.entity.user.enums.ProviderType;
-import kr.co.amateurs.server.domain.entity.user.enums.Role;
+import kr.co.amateurs.server.domain.user.model.entity.User;
+import kr.co.amateurs.server.domain.user.model.entity.enums.ProviderType;
+import kr.co.amateurs.server.domain.user.model.entity.enums.Role;
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;
 import org.springframework.security.oauth2.client.registration.ClientRegistration;

@@ -2,7 +2,7 @@ package kr.co.amateurs.server.common.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.restassured.RestAssured;
-import kr.co.amateurs.server.common.config.jwt.JwtProvider;
+import kr.co.amateurs.server.common.jwt.JwtProvider;
 import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

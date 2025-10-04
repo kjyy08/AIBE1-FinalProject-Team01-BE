@@ -1,4 +1,4 @@
-package kr.co.amateurs.server.common.config;
+package kr.co.amateurs.server.common.config.web.security;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;

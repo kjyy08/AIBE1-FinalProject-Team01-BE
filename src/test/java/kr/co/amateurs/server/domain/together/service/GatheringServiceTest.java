@@ -1,29 +1,28 @@
-package kr.co.amateurs.server.service.together;
+package kr.co.amateurs.server.domain.together.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import kr.co.amateurs.server.common.exception.CustomException;
 import kr.co.amateurs.server.common.model.dto.PageResponseDTO;
 import kr.co.amateurs.server.common.model.dto.PostPaginationParam;
-import kr.co.amateurs.server.domain.together.model.dto.GatheringPostRequestDTO;
-import kr.co.amateurs.server.domain.together.model.dto.GatheringPostResponseDTO;
+import kr.co.amateurs.server.domain.ai.service.PostEmbeddingService;
+import kr.co.amateurs.server.domain.bookmark.repository.BookmarkRepository;
+import kr.co.amateurs.server.domain.comment.repository.CommentRepository;
+import kr.co.amateurs.server.domain.like.repository.LikeRepository;
+import kr.co.amateurs.server.domain.like.service.LikeService;
 import kr.co.amateurs.server.domain.post.model.entity.GatheringPost;
 import kr.co.amateurs.server.domain.post.model.entity.Post;
 import kr.co.amateurs.server.domain.post.model.entity.PostStatistics;
 import kr.co.amateurs.server.domain.post.model.entity.enums.GatheringStatus;
 import kr.co.amateurs.server.domain.post.model.entity.enums.GatheringType;
-import kr.co.amateurs.server.domain.together.service.GatheringService;
-import kr.co.amateurs.server.domain.user.model.entity.User;
-import kr.co.amateurs.server.common.exception.CustomException;
-import kr.co.amateurs.server.domain.bookmark.repository.BookmarkRepository;
-import kr.co.amateurs.server.domain.comment.repository.CommentRepository;
-import kr.co.amateurs.server.domain.like.repository.LikeRepository;
 import kr.co.amateurs.server.domain.post.repository.PostRepository;
 import kr.co.amateurs.server.domain.post.repository.PostStatisticsRepository;
+import kr.co.amateurs.server.domain.together.model.dto.GatheringPostRequestDTO;
+import kr.co.amateurs.server.domain.together.model.dto.GatheringPostResponseDTO;
 import kr.co.amateurs.server.domain.together.repository.GatheringRepository;
+import kr.co.amateurs.server.domain.user.model.entity.User;
 import kr.co.amateurs.server.domain.user.repository.UserRepository;
 import kr.co.amateurs.server.domain.user.service.UserService;
-import kr.co.amateurs.server.domain.ai.service.PostEmbeddingService;
-import kr.co.amateurs.server.domain.like.service.LikeService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -40,8 +39,8 @@ import static kr.co.amateurs.server.domain.post.model.entity.Post.convertTagToLi
 import static kr.co.amateurs.server.fixture.together.CommonTogetherFixture.createAdmin;
 import static kr.co.amateurs.server.fixture.together.CommonTogetherFixture.createStudent;
 import static kr.co.amateurs.server.fixture.together.GatheringTestFixture.*;
-import static kr.co.amateurs.server.fixture.together.GatheringTestFixture.createStudyPost;
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.BDDMockito.given;
 
 @SpringBootTest

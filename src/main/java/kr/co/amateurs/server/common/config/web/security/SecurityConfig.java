@@ -1,9 +1,9 @@
-package kr.co.amateurs.server.common.config;
+package kr.co.amateurs.server.common.config.web.security;
 
-import kr.co.amateurs.server.common.config.http.CustomAuthorizeHttpRequestsConfigurer;
-import kr.co.amateurs.server.common.config.jwt.JwtAccessDeniedHandler;
-import kr.co.amateurs.server.common.config.jwt.JwtAuthenticationEntryPoint;
-import kr.co.amateurs.server.common.config.jwt.JwtAuthenticationFilter;
+import kr.co.amateurs.server.common.config.web.http.CustomAuthorizeHttpRequestsConfigurer;
+import kr.co.amateurs.server.common.jwt.JwtAccessDeniedHandler;
+import kr.co.amateurs.server.common.jwt.JwtAuthenticationEntryPoint;
+import kr.co.amateurs.server.common.jwt.JwtAuthenticationFilter;
 import kr.co.amateurs.server.domain.auth.service.CustomOAuth2UserService;
 import kr.co.amateurs.server.domain.auth.service.OAuth2LoginSuccessHandler;
 import lombok.RequiredArgsConstructor;

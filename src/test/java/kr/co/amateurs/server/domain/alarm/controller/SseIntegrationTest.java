@@ -1,10 +1,10 @@
 package kr.co.amateurs.server.domain.alarm.controller;
 
 import kr.co.amateurs.server.common.controller.AbstractControllerTest;
-import kr.co.amateurs.server.domain.user.model.entity.User;
-import kr.co.amateurs.server.fixture.common.UserTestFixture;
-import kr.co.amateurs.server.domain.user.repository.UserRepository;
 import kr.co.amateurs.server.domain.alarm.service.SseService;
+import kr.co.amateurs.server.domain.user.model.entity.User;
+import kr.co.amateurs.server.domain.user.repository.UserRepository;
+import kr.co.amateurs.server.fixture.common.UserTestFixture;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
@@ -20,7 +20,6 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.awaitility.Awaitility.await;
 
 @Sql(scripts = "/reset.sql", executionPhase = Sql.ExecutionPhase.BEFORE_TEST_CLASS)
 @Sql(scripts = "/reset.sql", executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)

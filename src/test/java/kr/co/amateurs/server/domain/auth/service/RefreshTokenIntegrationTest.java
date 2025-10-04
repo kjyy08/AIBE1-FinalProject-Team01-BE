@@ -1,7 +1,7 @@
 package kr.co.amateurs.server.domain.auth.service;
 
 import kr.co.amateurs.server.common.config.EmbeddedRedisConfig;
-import kr.co.amateurs.server.common.config.jwt.JwtProvider;
+import kr.co.amateurs.server.common.jwt.JwtProvider;
 import kr.co.amateurs.server.domain.auth.model.entity.RefreshToken;
 import kr.co.amateurs.server.domain.auth.repository.RefreshTokenRepository;
 import org.junit.jupiter.api.BeforeEach;

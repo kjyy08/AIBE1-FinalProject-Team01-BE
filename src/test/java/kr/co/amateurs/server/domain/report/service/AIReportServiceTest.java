@@ -1,22 +1,21 @@
-package kr.co.amateurs.server.service.report;
+package kr.co.amateurs.server.domain.report.service;
 
+import kr.co.amateurs.server.domain.comment.model.entity.Comment;
+import kr.co.amateurs.server.domain.comment.repository.CommentRepository;
+import kr.co.amateurs.server.domain.post.model.entity.Post;
+import kr.co.amateurs.server.domain.post.repository.PostRepository;
 import kr.co.amateurs.server.domain.report.model.dto.QueueStatus;
 import kr.co.amateurs.server.domain.report.model.dto.ReportRequestDTO;
 import kr.co.amateurs.server.domain.report.model.dto.ReportResponseDTO;
-import kr.co.amateurs.server.domain.comment.model.entity.Comment;
-import kr.co.amateurs.server.domain.post.model.entity.Post;
 import kr.co.amateurs.server.domain.report.model.entity.Report;
 import kr.co.amateurs.server.domain.report.model.entity.enums.ReportStatus;
 import kr.co.amateurs.server.domain.report.model.entity.enums.ReportTarget;
-import kr.co.amateurs.server.domain.report.service.ReportService;
-import kr.co.amateurs.server.domain.user.model.entity.User;
-import kr.co.amateurs.server.fixture.report.ReportTestFixtures;
-import kr.co.amateurs.server.domain.comment.repository.CommentRepository;
-import kr.co.amateurs.server.domain.post.repository.PostRepository;
 import kr.co.amateurs.server.domain.report.repository.ReportRepository;
+import kr.co.amateurs.server.domain.report.service.processor.ReportProcessingManager;
+import kr.co.amateurs.server.domain.user.model.entity.User;
 import kr.co.amateurs.server.domain.user.repository.UserRepository;
 import kr.co.amateurs.server.domain.user.service.UserService;
-import kr.co.amateurs.server.domain.report.service.processor.ReportProcessingManager;
+import kr.co.amateurs.server.fixture.report.ReportTestFixtures;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +26,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.BDDMockito.given;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.verify;
 
 @SpringBootTest
 @ActiveProfiles("test")

@@ -2,7 +2,7 @@ package kr.co.amateurs.server.domain.verify.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import kr.co.amateurs.server.common.config.jwt.CustomUserDetails;
+import kr.co.amateurs.server.common.jwt.CustomUserDetails;
 import kr.co.amateurs.server.domain.verify.model.dto.VerifyResultDTO;
 import kr.co.amateurs.server.domain.verify.model.dto.VerifyStatusDTO;
 import kr.co.amateurs.server.domain.post.model.entity.enums.DevCourseTrack;

@@ -1,4 +1,4 @@
-package kr.co.amateurs.server.common.config.jwt;
+package kr.co.amateurs.server.common.jwt;
 
 import kr.co.amateurs.server.fixture.auth.TokenTestFixture;
 import org.junit.jupiter.api.Test;

@@ -2,9 +2,9 @@ package kr.co.amateurs.server.fixture.project;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import kr.co.amateurs.server.domain.entity.post.Post;
-import kr.co.amateurs.server.domain.entity.post.enums.BoardType;
-import kr.co.amateurs.server.domain.entity.user.User;
+import kr.co.amateurs.server.domain.post.model.entity.Post;
+import kr.co.amateurs.server.domain.post.model.entity.enums.BoardType;
+import kr.co.amateurs.server.domain.user.model.entity.User;
 
 import java.util.ArrayList;
 import java.util.List;
