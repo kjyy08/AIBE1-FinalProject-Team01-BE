@@ -1,13 +1,13 @@
 package kr.co.amateurs.server.fixture.ai;
 
-import kr.co.amateurs.server.domain.entity.ai.AiProfile;
-import kr.co.amateurs.server.domain.entity.ai.RecommendedPost;
-import kr.co.amateurs.server.domain.entity.post.Post;
-import kr.co.amateurs.server.domain.entity.user.User;
-import kr.co.amateurs.server.domain.entity.user.enums.Role;
-import kr.co.amateurs.server.domain.dto.ai.PostContentData;
-import kr.co.amateurs.server.domain.dto.ai.PostSummaryData;
-import kr.co.amateurs.server.domain.dto.ai.AiProfileResponse;
+import kr.co.amateurs.server.domain.ai.model.entity.AiProfile;
+import kr.co.amateurs.server.domain.ai.model.entity.RecommendedPost;
+import kr.co.amateurs.server.domain.post.model.entity.Post;
+import kr.co.amateurs.server.domain.user.model.entity.User;
+import kr.co.amateurs.server.domain.user.model.entity.enums.Role;
+import kr.co.amateurs.server.domain.ai.model.dto.PostContentData;
+import kr.co.amateurs.server.domain.ai.model.dto.PostSummaryData;
+import kr.co.amateurs.server.domain.ai.model.dto.AiProfileResponse;
 
 public class AiTestFixture {
     public static User createTestUser() {

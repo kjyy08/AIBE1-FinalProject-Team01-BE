@@ -1,17 +1,17 @@
 package kr.co.amateurs.server.fixture.it;
 
-import kr.co.amateurs.server.domain.dto.it.ITRequestDTO;
-import kr.co.amateurs.server.domain.entity.comment.Comment;
-import kr.co.amateurs.server.domain.entity.post.ITPost;
-import kr.co.amateurs.server.domain.entity.post.Post;
-import kr.co.amateurs.server.domain.entity.post.PostImage;
-import kr.co.amateurs.server.domain.entity.post.enums.BoardType;
-import kr.co.amateurs.server.domain.entity.user.User;
-import kr.co.amateurs.server.domain.entity.user.enums.Role;
+import kr.co.amateurs.server.domain.it.model.dto.ITRequestDTO;
+import kr.co.amateurs.server.domain.comment.model.entity.Comment;
+import kr.co.amateurs.server.domain.post.model.entity.ITPost;
+import kr.co.amateurs.server.domain.post.model.entity.Post;
+import kr.co.amateurs.server.domain.post.model.entity.PostImage;
+import kr.co.amateurs.server.domain.post.model.entity.enums.BoardType;
+import kr.co.amateurs.server.domain.user.model.entity.User;
+import kr.co.amateurs.server.domain.user.model.entity.enums.Role;
 
 import java.util.ArrayList;
 
-import static kr.co.amateurs.server.domain.entity.post.Post.convertTagToList;
+import static kr.co.amateurs.server.domain.post.model.entity.Post.convertTagToList;
 
 public class ITTestFixtures {
     public static User createAdminUser() {

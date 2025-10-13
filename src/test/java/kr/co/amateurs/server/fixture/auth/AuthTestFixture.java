@@ -1,7 +1,7 @@
 package kr.co.amateurs.server.fixture.auth;
 
 import kr.co.amateurs.server.fixture.common.UserTestFixture;
-import kr.co.amateurs.server.domain.dto.auth.LoginRequestDTO;
+import kr.co.amateurs.server.domain.auth.model.dto.LoginRequestDTO;
 
 public class AuthTestFixture {
 

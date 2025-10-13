@@ -1,15 +1,15 @@
 package kr.co.amateurs.server.fixture.report;
 
-import kr.co.amateurs.server.domain.dto.report.ReportRequestDTO;
-import kr.co.amateurs.server.domain.entity.comment.Comment;
-import kr.co.amateurs.server.domain.entity.post.Post;
-import kr.co.amateurs.server.domain.entity.post.enums.BoardType;
-import kr.co.amateurs.server.domain.entity.report.Report;
-import kr.co.amateurs.server.domain.entity.report.enums.ReportStatus;
-import kr.co.amateurs.server.domain.entity.report.enums.ReportTarget;
-import kr.co.amateurs.server.domain.entity.report.enums.ReportType;
-import kr.co.amateurs.server.domain.entity.user.User;
-import kr.co.amateurs.server.domain.entity.user.enums.Role;
+import kr.co.amateurs.server.domain.report.model.dto.ReportRequestDTO;
+import kr.co.amateurs.server.domain.comment.model.entity.Comment;
+import kr.co.amateurs.server.domain.post.model.entity.Post;
+import kr.co.amateurs.server.domain.post.model.entity.enums.BoardType;
+import kr.co.amateurs.server.domain.report.model.entity.Report;
+import kr.co.amateurs.server.domain.report.model.entity.enums.ReportStatus;
+import kr.co.amateurs.server.domain.report.model.entity.enums.ReportTarget;
+import kr.co.amateurs.server.domain.report.model.entity.enums.ReportType;
+import kr.co.amateurs.server.domain.user.model.entity.User;
+import kr.co.amateurs.server.domain.user.model.entity.enums.Role;
 
 import java.util.ArrayList;
 

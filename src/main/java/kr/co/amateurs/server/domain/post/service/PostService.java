@@ -1,0 +1,78 @@
+package kr.co.amateurs.server.domain.post.service;
+
+import kr.co.amateurs.server.common.model.dto.ErrorCode;
+import kr.co.amateurs.server.domain.ai.model.dto.PostContentData;
+import kr.co.amateurs.server.common.model.dto.PageResponseDTO;
+import kr.co.amateurs.server.common.model.dto.PaginationParam;
+import kr.co.amateurs.server.domain.post.model.dto.PostResponseDTO;
+import kr.co.amateurs.server.domain.post.model.entity.Post;
+import kr.co.amateurs.server.domain.post.model.entity.enums.BoardType;
+import kr.co.amateurs.server.domain.user.model.entity.User;
+import kr.co.amateurs.server.domain.post.repository.PostJooqRepository;
+import kr.co.amateurs.server.domain.post.repository.PostRepository;
+import kr.co.amateurs.server.domain.user.service.UserService;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+
+import java.time.LocalDateTime;
+import java.util.Collections;
+import java.util.List;
+
+import static kr.co.amateurs.server.common.model.dto.PageResponseDTO.convertPageToDTO;
+
+@Service
+@RequiredArgsConstructor
+@Slf4j
+public class PostService {
+
+    private final PostRepository postRepository;
+    private final UserService userService;
+    private final PostJooqRepository postJooqRepository;
+
+    public List<PostContentData> getWritePosts(Long userId) {
+        try {
+            List<Post> posts = postRepository.findTop3ByUserIdOrderByCreatedAtDesc(userId);
+
+            List<PostContentData> postContentDataList = posts.stream()
+                    .map(post -> new PostContentData(post.getId(), post.getTitle(), post.getContent(), "작성글"))
+                    .toList();
+            return postContentDataList;
+        } catch (Exception e) {
+            return Collections.emptyList();
+        }
+    }
+
+    public Post findById(Long postId) {
+        return postRepository.findById(postId)
+                .orElseThrow(ErrorCode.POST_NOT_FOUND);
+    }
+
+    public List<Post> findAllPosts() {
+        return postRepository.findAll();
+    }
+
+    public boolean hasRecentPostActivity(Long userId, int days) {
+        try {
+            LocalDateTime since = LocalDateTime.now().minusDays(days);
+            return postRepository.existsByUserIdAndCreatedAtAfter(userId, since);
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public PageResponseDTO<PostResponseDTO> getMyPostList(PaginationParam paginationParam) {
+        User user = userService.getCurrentLoginUser();
+        Pageable pageable = paginationParam.toPageable();
+
+        Page<PostResponseDTO> postResponseDTO = postJooqRepository.findPostsByType(user.getId(), pageable, "my");
+
+        return convertPageToDTO(postResponseDTO);
+    }
+
+    public Long getBoardId(Long postId, BoardType boardType) {
+        return postJooqRepository.getBoardId(postId, boardType);
+    }
+}

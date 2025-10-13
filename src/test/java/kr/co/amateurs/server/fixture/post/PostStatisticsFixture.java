@@ -1,7 +1,7 @@
 package kr.co.amateurs.server.fixture.post;
 
-import kr.co.amateurs.server.domain.entity.post.Post;
-import kr.co.amateurs.server.domain.entity.post.PostStatistics;
+import kr.co.amateurs.server.domain.post.model.entity.Post;
+import kr.co.amateurs.server.domain.post.model.entity.PostStatistics;
 
 public class PostStatisticsFixture {
     public static PostStatistics createDefault(Post post){

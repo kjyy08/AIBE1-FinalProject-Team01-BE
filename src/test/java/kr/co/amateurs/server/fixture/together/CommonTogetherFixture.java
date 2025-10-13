@@ -1,12 +1,12 @@
 package kr.co.amateurs.server.fixture.together;
 
-import kr.co.amateurs.server.domain.dto.common.PaginationSortType;
-import kr.co.amateurs.server.domain.dto.common.PostPaginationParam;
-import kr.co.amateurs.server.domain.entity.post.Post;
-import kr.co.amateurs.server.domain.entity.post.enums.BoardType;
-import kr.co.amateurs.server.domain.entity.post.enums.DevCourseTrack;
-import kr.co.amateurs.server.domain.entity.user.User;
-import kr.co.amateurs.server.domain.entity.user.enums.Role;
+import kr.co.amateurs.server.common.model.dto.PaginationSortType;
+import kr.co.amateurs.server.common.model.dto.PostPaginationParam;
+import kr.co.amateurs.server.domain.post.model.entity.Post;
+import kr.co.amateurs.server.domain.post.model.entity.enums.BoardType;
+import kr.co.amateurs.server.domain.post.model.entity.enums.DevCourseTrack;
+import kr.co.amateurs.server.domain.user.model.entity.User;
+import kr.co.amateurs.server.domain.user.model.entity.enums.Role;
 import org.springframework.data.domain.Sort;
 
 

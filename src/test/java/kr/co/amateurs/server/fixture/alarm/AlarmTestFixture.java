@@ -1,11 +1,11 @@
 package kr.co.amateurs.server.fixture.alarm;
 
-import kr.co.amateurs.server.domain.entity.alarm.Alarm;
-import kr.co.amateurs.server.domain.entity.alarm.enums.AlarmType;
-import kr.co.amateurs.server.domain.entity.alarm.metadata.CommentMetaData;
-import kr.co.amateurs.server.domain.entity.post.enums.BoardType;
+import kr.co.amateurs.server.domain.alarm.model.entity.Alarm;
+import kr.co.amateurs.server.domain.alarm.model.entity.enums.AlarmType;
+import kr.co.amateurs.server.domain.alarm.model.entity.metadata.CommentMetaData;
+import kr.co.amateurs.server.domain.post.model.entity.enums.BoardType;
 import kr.co.amateurs.server.fixture.common.TestConstants;
-import kr.co.amateurs.server.repository.alarm.AlarmRepository;
+import kr.co.amateurs.server.domain.alarm.repository.AlarmRepository;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;

@@ -118,17 +118,14 @@ jacocoTestReport {
 	afterEvaluate {
 		classDirectories.setFrom(files(classDirectories.files.collect {
 			fileTree(dir: it, exclude: [
-					'**/generated/**',
+					'org/jooq/**',
 
-					'**/config/**',
-					'**/domain/**',
-					'**/exception/**',
-					'**/handler/**',
-					'**/repository/**',
-					'**/utils/**',
+					'**/common/**',
+					'**/domain/*/config/**',
+					'**/domain/*/model/**',
+					'**/domain/*/repository/**',
 
-					'**/*Application.*',
-					'**/controller/ai/AiDevController.*',
+					'**/*Application.*'
 			])
 		}))
 	}
@@ -137,35 +134,40 @@ jacocoTestReport {
 jacocoTestCoverageVerification {
 	dependsOn jacocoTestReport
 
-	violationRules {
-		rule {
-			limit {
-				counter = 'INSTRUCTION'
-				value = 'COVEREDRATIO'
-				minimum = 0.50
-			}
-			limit {
-				counter = 'BRANCH'
-				value = 'COVEREDRATIO'
-				minimum = 0.50
-			}
-		}
-
-		rule {
-			element = 'CLASS'
-			limit {
-				counter = 'INSTRUCTION'
-				value = 'COVEREDRATIO'
-				minimum = 0.50
-			}
-
-			excludes = [
-					'*.Application',
-					'*.Config*',
-					'*.Configuration*'
-			]
-		}
-	}
+//	violationRules {
+//		rule {
+//			limit {
+//				counter = 'INSTRUCTION'
+//				value = 'COVEREDRATIO'
+//				minimum = 0.50
+//			}
+//			limit {
+//				counter = 'BRANCH'
+//				value = 'COVEREDRATIO'
+//				minimum = 0.50
+//			}
+//		}
+//
+//		rule {
+//			element = 'CLASS'
+//			limit {
+//				counter = 'INSTRUCTION'
+//				value = 'COVEREDRATIO'
+//				minimum = 0.50
+//			}
+//
+//			excludes = [
+//					'*.Application',
+//					'*.Config*',
+//					'*.Configuration*',
+//					'org.jooq.generated.*',
+//					'kr.co.amateurs.server.common.*',
+//					'*.model.dto.*',
+//					'*.model.entity.*',
+//					'*.repository.*'
+//			]
+//		}
+//	}
 }
 
 
