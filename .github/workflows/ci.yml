@@ -61,7 +61,8 @@ jobs:
       image_name: ${{ vars.IMAGE_NAME || github.repository }}
 
   notify:
-    name: CI 결과 알림
+    name: CI 결과 알림 (Deprecated)
+    if: false  # Deprecated - 더 이상 사용하지 않음
     # if: needs.check-changes.outputs.should-run == 'true'
     needs: [test, build]
     runs-on: ubuntu-latest
