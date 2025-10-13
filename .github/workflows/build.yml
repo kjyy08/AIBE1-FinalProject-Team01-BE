@@ -21,6 +21,9 @@ jobs:
   build:
     name: Docker 이미지 빌드
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
 
     outputs:
       image-tag: ${{ steps.meta.outputs.version }}
