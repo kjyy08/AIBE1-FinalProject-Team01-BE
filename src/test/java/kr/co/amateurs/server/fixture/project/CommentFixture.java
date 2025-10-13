@@ -1,8 +1,8 @@
 package kr.co.amateurs.server.fixture.project;
 
-import kr.co.amateurs.server.domain.entity.comment.Comment;
-import kr.co.amateurs.server.domain.entity.post.Post;
-import kr.co.amateurs.server.domain.entity.user.User;
+import kr.co.amateurs.server.domain.comment.model.entity.Comment;
+import kr.co.amateurs.server.domain.post.model.entity.Post;
+import kr.co.amateurs.server.domain.user.model.entity.User;
 
 public class CommentFixture {
     public static Comment createComment(Post post, User user, String content) {

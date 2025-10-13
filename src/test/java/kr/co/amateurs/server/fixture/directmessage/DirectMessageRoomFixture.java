@@ -1,9 +1,9 @@
 package kr.co.amateurs.server.fixture.directmessage;
 
-import kr.co.amateurs.server.domain.entity.directmessage.DirectMessageRoom;
-import kr.co.amateurs.server.domain.entity.directmessage.Participant;
+import kr.co.amateurs.server.domain.directmessage.model.entity.DirectMessageRoom;
+import kr.co.amateurs.server.domain.directmessage.model.entity.Participant;
 import kr.co.amateurs.server.fixture.common.TestConstants;
-import kr.co.amateurs.server.repository.directmessage.DirectMessageRoomRepository;
+import kr.co.amateurs.server.domain.directmessage.repository.DirectMessageRoomRepository;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

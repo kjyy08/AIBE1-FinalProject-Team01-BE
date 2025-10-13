@@ -1,10 +1,10 @@
 package kr.co.amateurs.server.fixture.common;
 
-import kr.co.amateurs.server.domain.dto.auth.SignupRequestDTO;
-import kr.co.amateurs.server.domain.entity.user.User;
-import kr.co.amateurs.server.domain.entity.user.enums.ProviderType;
-import kr.co.amateurs.server.domain.entity.user.enums.Role;
-import kr.co.amateurs.server.domain.entity.user.enums.Topic;
+import kr.co.amateurs.server.domain.auth.model.dto.SignupRequestDTO;
+import kr.co.amateurs.server.domain.user.model.entity.User;
+import kr.co.amateurs.server.domain.user.model.entity.enums.ProviderType;
+import kr.co.amateurs.server.domain.user.model.entity.enums.Role;
+import kr.co.amateurs.server.domain.user.model.entity.enums.Topic;
 
 import java.util.Set;
 

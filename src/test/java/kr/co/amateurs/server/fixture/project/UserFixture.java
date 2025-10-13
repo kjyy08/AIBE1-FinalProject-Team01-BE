@@ -1,8 +1,8 @@
 package kr.co.amateurs.server.fixture.project;
 
-import kr.co.amateurs.server.domain.entity.post.enums.DevCourseTrack;
-import kr.co.amateurs.server.domain.entity.user.User;
-import kr.co.amateurs.server.domain.entity.user.enums.Role;
+import kr.co.amateurs.server.domain.post.model.entity.enums.DevCourseTrack;
+import kr.co.amateurs.server.domain.user.model.entity.User;
+import kr.co.amateurs.server.domain.user.model.entity.enums.Role;
 
 public class UserFixture {
     private static int count = 0;

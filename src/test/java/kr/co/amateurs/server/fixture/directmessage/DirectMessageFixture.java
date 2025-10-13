@@ -1,10 +1,10 @@
 package kr.co.amateurs.server.fixture.directmessage;
 
-import kr.co.amateurs.server.domain.dto.directmessage.DirectMessageSearchPaginationParam;
-import kr.co.amateurs.server.domain.entity.directmessage.DirectMessage;
-import kr.co.amateurs.server.domain.entity.directmessage.enums.MessageType;
+import kr.co.amateurs.server.domain.directmessage.model.dto.DirectMessageSearchPaginationParam;
+import kr.co.amateurs.server.domain.directmessage.model.entity.DirectMessage;
+import kr.co.amateurs.server.domain.directmessage.model.entity.enums.MessageType;
 import kr.co.amateurs.server.fixture.common.TestConstants;
-import kr.co.amateurs.server.repository.directmessage.DirectMessageRepository;
+import kr.co.amateurs.server.domain.directmessage.repository.DirectMessageRepository;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;

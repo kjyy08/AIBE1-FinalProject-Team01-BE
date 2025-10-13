@@ -1,14 +1,14 @@
 package kr.co.amateurs.server.fixture.together;
 
-import kr.co.amateurs.server.domain.dto.together.MatchPostRequestDTO;
-import kr.co.amateurs.server.domain.entity.post.MatchingPost;
-import kr.co.amateurs.server.domain.entity.post.Post;
-import kr.co.amateurs.server.domain.entity.post.enums.BoardType;
-import kr.co.amateurs.server.domain.entity.post.enums.MatchingStatus;
-import kr.co.amateurs.server.domain.entity.post.enums.MatchingType;
-import kr.co.amateurs.server.domain.entity.user.User;
+import kr.co.amateurs.server.domain.together.model.dto.MatchPostRequestDTO;
+import kr.co.amateurs.server.domain.post.model.entity.MatchingPost;
+import kr.co.amateurs.server.domain.post.model.entity.Post;
+import kr.co.amateurs.server.domain.post.model.entity.enums.BoardType;
+import kr.co.amateurs.server.domain.post.model.entity.enums.MatchingStatus;
+import kr.co.amateurs.server.domain.post.model.entity.enums.MatchingType;
+import kr.co.amateurs.server.domain.user.model.entity.User;
 
-import static kr.co.amateurs.server.domain.entity.post.Post.convertTagToList;
+import static kr.co.amateurs.server.domain.post.model.entity.Post.convertTagToList;
 
 
 public class MatchTestFixture {

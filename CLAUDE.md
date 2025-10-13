@@ -7,6 +7,8 @@ And You should respond in Korean.
 
 ### Building and Testing
 ```bash
+# Windows users: Replace ./gradlew with gradlew.bat in all commands
+
 # Build the project (includes JOOQ code generation)
 ./gradlew build
 
@@ -28,7 +30,7 @@ And You should respond in Korean.
 # Clean build artifacts (including generated JOOQ classes)
 ./gradlew clean
 
-# Generate JOOQ classes only (requires database to be running)
+# Generate JOOQ classes only (uses jooq-docker plugin - no manual DB setup needed)
 ./gradlew generateJooqClasses
 ```
 
@@ -79,24 +81,81 @@ This is a **Spring Boot 3.5.0** backend application for the Amateurs community p
 - **Spring Security** with JWT authentication
 
 ### Key Architectural Patterns
-1. **Domain-Driven Design**: Organized by business domains (auth, post, ai, etc.)
-2. **Event-Driven Architecture**: Uses Spring Events for decoupled components
-3. **Repository Pattern**: Separate JPA and JOOQ repositories
-4. **Strategy Pattern**: For alarm creation and report handling
-5. **AOP**: Custom annotations for alarm triggers and post metadata validation
+1. **Modular Monolith Architecture**: Organized by business domains with clear module boundaries
+2. **Domain-Driven Design**: Each domain contains its own controllers, services, repositories, and models
+3. **Event-Driven Architecture**: Uses Spring Events for decoupled components
+4. **Repository Pattern**: Separate JPA and JOOQ repositories within each domain
+5. **Strategy Pattern**: For alarm creation and report handling
+6. **AOP**: Custom annotations for alarm triggers and post metadata validation
 
 ## Project Structure
 
-### Core Packages
-- `annotation/`: Custom annotations with AOP aspects
-  - `alarmtrigger/`: Auto-generates alarms using AOP
-  - `checkpostmetadata/`: Validates post metadata
-- `config/`: Configuration classes for security, database, AI, etc.
-- `controller/`: REST API endpoints organized by domain
-- `domain/dto/`: Data transfer objects for API communication
-- `repository/`: Data access layer (both JPA and JOOQ implementations)
-- `service/`: Business logic layer
-- `utils/`: Utility classes
+### Modular Monolith Architecture
+The project follows a modular monolith architecture with clear separation between common infrastructure and business domains.
+
+```
+src/main/java/kr/co/amateurs/server/
+├── common/                          # Common infrastructure module
+│   ├── annotation/                  # Custom annotations with AOP aspects
+│   │   ├── alarmtrigger/           # Auto-generates alarms using AOP
+│   │   └── checkpostmetadata/      # Validates post metadata
+│   ├── config/                      # Common configurations
+│   │   ├── db/                     # Database configurations (JPA, JOOQ)
+│   │   ├── web/                    # Web configurations (Security, CORS, etc.)
+│   │   ├── ai/                     # AI service configurations
+│   │   └── cache/                  # Cache configurations
+│   ├── exception/                   # Common exception classes
+│   ├── handler/                     # Global exception handlers
+│   ├── jwt/                        # JWT utilities
+│   ├── model/                       # Common domain models (BaseEntity, etc.)
+│   └── utils/                       # Utility classes
+│
+└── domain/                          # Business domain modules (18 domains)
+    ├── user/                       # User domain
+    │   ├── controller/             # UserController
+    │   ├── service/                # UserService
+    │   ├── repository/             # UserRepository, UserJooqRepository
+    │   └── model/                  # User domain models
+    │       ├── entity/             # User entity
+    │       └── dto/                # User DTOs
+    │
+    ├── auth/                       # Authentication domain
+    ├── post/                       # Post domain
+    ├── comment/                    # Comment domain
+    ├── like/                       # Like domain
+    ├── bookmark/                   # Bookmark domain
+    ├── follow/                     # Follow domain
+    ├── alarm/                      # Alarm domain
+    ├── report/                     # Report domain
+    ├── community/                  # Community domain
+    ├── topic/                      # Topic domain
+    ├── project/                    # Project domain
+    ├── together/                   # Together domain
+    ├── it/                         # IT domain
+    ├── directmessage/              # Direct message domain
+    ├── file/                       # File domain
+    ├── verify/                     # Verification domain
+    └── ai/                         # AI domain
+
+src/test/java/kr/co/amateurs/server/
+├── common/                          # Common module tests
+└── domain/                          # Domain-specific tests
+    ├── user/
+    │   ├── controller/
+    │   └── service/
+    └── ...
+```
+
+### Domain Module Structure
+Each domain module is self-contained with:
+- **controller/**: REST API endpoints for the domain
+- **service/**: Business logic implementation
+- **repository/**: Data access layer (both JPA and JOOQ)
+- **model/**: Domain models
+  - **entity/**: JPA entities
+  - **dto/**: Data transfer objects (Request/Response DTOs)
+  - **event/**: Domain events (if applicable)
+  - **enums/**: Domain-specific enums
 
 ### Database Architecture
 - **Primary DB (MySQL)**: User data, posts, comments, authentication
@@ -117,10 +176,16 @@ This is a **Spring Boot 3.5.0** backend application for the Amateurs community p
 ### JOOQ Usage
 - JOOQ is the **primary query mechanism** for complex queries and reporting
 - Generated classes are in `src/generated/` (excluded from git)
-- **IMPORTANT**: Database must be running before generating JOOQ classes
-  1. Start MySQL: `docker-compose -f docker/mysql/docker-compose.yml up -d`
-  2. Generate classes: `./gradlew generateJooqClasses`
-  3. If build fails with JOOQ errors, regenerate classes after ensuring DB is running
+- **Two ways to generate JOOQ classes**:
+  1. **Using jooq-docker plugin** (Recommended - no manual DB setup needed):
+     - `./gradlew generateJooqClasses` (Windows: `gradlew.bat generateJooqClasses`)
+     - Plugin automatically spins up MySQL 8.0.41 container, runs Flyway migrations, generates classes
+  2. **Using local MySQL**:
+     - Start MySQL: `docker-compose -f docker/mysql/docker-compose.yml up -d`
+     - Generate classes: `./gradlew generateJooqClasses`
+- **Windows users**: Use `gradlew.bat` instead of `./gradlew`
+- **Build behavior**: `compileJava` task automatically runs `generateJooqClasses` unless `DOCKER_BUILD` env var is set
+- If build fails with JOOQ errors, regenerate classes: `./gradlew clean generateJooqClasses`
 - Use `DSLContext` for building type-safe queries
 - Follow patterns in existing `*JooqRepository` classes
 - Refer to `docs/jooq-guide.md` for detailed usage examples
@@ -128,11 +193,17 @@ This is a **Spring Boot 3.5.0** backend application for the Amateurs community p
 ### Testing Strategy
 - **Integration Tests**: Use `@SpringBootTest` with Testcontainers (MySQL)
 - **Unit Tests**: Mock external dependencies
-- **Coverage Requirement**: Minimum 50% instruction and branch coverage
+- **Coverage Requirement**: Minimum 50% instruction and branch coverage (currently disabled)
 - **Test Database**: Testcontainers with MySQL 8.0 for integration tests
 - **Redis**: Embedded Redis for testing
 - **MongoDB**: Embedded MongoDB for testing
-- Excluded from coverage: config, domain, exception, handler, repository, utils packages
+- **Coverage Exclusions**:
+  - JOOQ generated classes (`org/jooq/**`)
+  - Common module (`**/common/**`)
+  - Domain configurations (`**/domain/*/config/**`)
+  - Domain models (`**/domain/*/model/**`)
+  - Domain repositories (`**/domain/*/repository/**`)
+  - Application main class
 
 ### Security & Authentication
 - **JWT Tokens**: Access + Refresh token pattern
