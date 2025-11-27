@@ -124,6 +124,9 @@ management:
     metrics:
       export:
         enabled: false
+  metrics:
+    tags:
+      application: ${spring.application.name}
 
 logging:
   level:
@@ -143,7 +146,7 @@ verification:
 
 otel:
   service:
-    name: amateurs-api-server
+    name: ${spring.application.name}
   traces:
     exporter: otlp
     sampler: parentbased_traceidratio
